@@ -18,6 +18,7 @@ interface MusiqueProps {
 
 export default function MusiqueComposant(props: MusiqueProps) {
   {
+    //Initialisation elements d'une musique
     const [sound, setSound] = React.useState<Audio.Sound | null>(null);
     const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
     const [duration, setDuration] = React.useState<number | null>(null);
@@ -30,7 +31,7 @@ export default function MusiqueComposant(props: MusiqueProps) {
       setPosition(status.positionMillis);
       setIsLooping(status.isLooping);
     };
-
+    //Creation de l'audio
     async function initSound() {
       const { sound } = await Audio.Sound.createAsync(
         props.path,
@@ -43,19 +44,19 @@ export default function MusiqueComposant(props: MusiqueProps) {
     React.useEffect(() => {
       initSound();
     }, []);
-
+    //Fonction qui permet de commencer la musique
     async function playSound() {
       if (sound) {
         await sound.playAsync();
       }
     }
-
+    //Fonction qui permet de mettre pause la musiquqe
     async function pauseSound() {
       if (sound) {
         await sound.pauseAsync();
       }
     }
-
+    //Fonction qui permet de mettre en boucle la musique
     async function LoopeSound() {
       if (sound) {
         if (!isLooping) {
@@ -65,7 +66,7 @@ export default function MusiqueComposant(props: MusiqueProps) {
         }
       }
     }
-
+    //Fonction qui permet de récuperer et de modifier le temps de la musique (pour l'utiliser avec la barre pour faire commencer la musique à un moment souhaité)
     async function onChange(e: number) {
       if (sound) {
         try {

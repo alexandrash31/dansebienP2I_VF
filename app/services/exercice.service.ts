@@ -12,7 +12,6 @@ export interface ExerciceS {
   pas?: Array<PasS>;
   musique?: Musique;
   favori?: boolean;
-  solo?: boolean;
 }
 
 class ExercicesServ {
@@ -30,7 +29,6 @@ class ExercicesServ {
         { id: "4", typePas: "sousous", repetitions: 2 },
       ],
       favori: false,
-      solo: true,
     },
     {
       id: "2",
@@ -46,7 +44,6 @@ class ExercicesServ {
         { id: "5", typePas: "relevé suspendu", repetitions: 4 },
       ],
       favori: true,
-      solo: false,
     },
     {
       id: "3",
@@ -55,7 +52,6 @@ class ExercicesServ {
       typeExo: "jetés",
       tempo: "1-1-1-1-1-1-1-2",
       favori: true,
-      solo: true,
 
       pas: [
         { id: "1", typePas: "dégagé", repetitions: 1 },
@@ -82,7 +78,6 @@ class ExercicesServ {
       ],
 
       favori: true,
-      solo: false,
     },
     {
       id: "5",
@@ -91,7 +86,6 @@ class ExercicesServ {
       typeExo: "jetés",
       tempo: "2-2-48-4",
       favori: true,
-      solo: true,
       pas: [
         { id: "1", typePas: "demi-plié", repetitions: 2 },
         { id: "2", typePas: "grand plié", repetitions: 4 },
@@ -115,7 +109,6 @@ class ExercicesServ {
       ],
 
       favori: true,
-      solo: false,
     },
   ];
 

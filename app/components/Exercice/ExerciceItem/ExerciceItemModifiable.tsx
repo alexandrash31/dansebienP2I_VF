@@ -18,11 +18,12 @@ export default class ExerciceItemModifiable extends Component<
   ExerciceItemModifiableProps,
   {}
 > {
+  //Permet d'effacer un exercice
   removeItem = () => {
     const { onDelete } = this.props;
     onDelete(this.props.exercice.nomExo);
   };
-
+  //Permet de mettre en favori un exercice
   favoriAjoute = () => {
     this.props.exercice.favori = !this.props.exercice.favori;
     this.setState({});

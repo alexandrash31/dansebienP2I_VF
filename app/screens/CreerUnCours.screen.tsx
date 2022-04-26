@@ -45,6 +45,7 @@ export default class CreerUnCourscreen extends Component<
   };
 
   render() {
+    //Affichage du formulaire pour crééer un cours
     if (!this.state.displayAjouterExercices)
       return (
         <View>
@@ -66,8 +67,6 @@ export default class CreerUnCourscreen extends Component<
             <Picker.Item label="Intermédiaire" value="Intermédiaire" />
             <Picker.Item label="Avancé" value="Avancé" />
           </Picker>
-
-          <CoursList cours={this.state.cours} />
 
           <Button
             style={styleBoutons.buttonEnregister}

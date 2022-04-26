@@ -32,12 +32,14 @@ export default class CreerUnExerciceScreen extends Component<
 
     displayAjoutPas: false,
   };
+  //updateExercice permet de modifier chaque element constituant de l'objet exercice
 
   updateExercice = (update: Partial<ExerciceS>) => {
     this.setState({
       partialExercice: { ...this.state.partialExercice, ...update },
     });
   };
+  //submitExercice permet d'enregistrer l'objet pas dans un tableau pour pouvoir être affiché
 
   submitExercice = () => {
     if (
@@ -123,12 +125,9 @@ export default class CreerUnExerciceScreen extends Component<
               Enregistrer{" "}
             </Button>
           </View>
-          <View>
-            <ExerciceList exercice={this.state.exercice} />
-          </View>
         </View>
       );
-    //Si on clique sur enregistrer, on peut ensuite ajouter des pas à l'exercice qui vietn d'être crée
+    //Si on clique sur enregistrer, on peut ensuite ajouter des pas à l'exercice qui vient d'être crée
     return (
       <ScrollView>
         <View>

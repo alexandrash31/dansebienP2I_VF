@@ -22,6 +22,7 @@ export default class VoirMesCoursScreen extends Component<
   {},
   VoirMesCoursState
 > {
+  //Inititalisation cours et exercice (peut importe lesquels)
   state: VoirMesCoursState = {
     cours: [],
     displayCoursDetails: false,
@@ -39,12 +40,11 @@ export default class VoirMesCoursScreen extends Component<
           tempo: "2-2-2-4",
           pas: [{ id: "1", typePas: "jetés", repetitions: 2 }],
           favori: true,
-          solo: true,
         },
       ],
     },
   };
-
+  //Chargement de tous les cours à partir du service
   loadCours = () => {
     coursServices.getAll().then((cours) => {
       this.setState({ cours });
@@ -54,12 +54,12 @@ export default class VoirMesCoursScreen extends Component<
   componentDidMount() {
     this.loadCours();
   }
-
+  //changer d'affichage pour pouvoir visualiser les details du cours
   changerC = (itemCours: Cours) => {
     this.setState({ displayCoursDetails: true });
     this.setState({ itemCours });
   };
-
+  //Bouton de retour
   changerR = () => {
     this.setState({ displayCoursDetails: false });
   };

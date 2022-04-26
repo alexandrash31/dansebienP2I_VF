@@ -29,6 +29,8 @@ export default class ExerciceListAjouter extends Component<
     navigation: undefined,
     itemExercice: "",
   };
+
+  //Chargement de tous les exercices à partir du service
   loadExercices = () => {
     exerciceService.getAll().then((exercices) => {
       let displayedExercices = exercices;
@@ -48,6 +50,7 @@ export default class ExerciceListAjouter extends Component<
   componentDidMount() {
     this.loadExercices();
   }
+  //Permet d'utiliser le filtre
 
   onChangeFilter = (filter: string) => {
     this.setState({ difficulteFilter: filter });

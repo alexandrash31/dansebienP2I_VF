@@ -29,7 +29,6 @@ class CoursServ {
             { id: "5", typePas: "relevé suspendu", repetitions: 4 },
           ],
           favori: true,
-          solo: false,
 
           musique: {
             id: "1",
@@ -61,7 +60,6 @@ class CoursServ {
             path: require("../musiques/degages.mp3"),
           },
           favori: true,
-          solo: false,
         },
         {
           id: "3",
@@ -79,7 +77,6 @@ class CoursServ {
             { id: "7", typePas: "développé", repetitions: 2 },
           ],
           favori: true,
-          solo: false,
 
           musique: {
             id: "1",
@@ -110,7 +107,6 @@ class CoursServ {
             path: require("../musiques/rond_de_jambe.mp3"),
           },
           favori: true,
-          solo: false,
         },
         {
           id: "5",
@@ -133,7 +129,6 @@ class CoursServ {
             path: require("../musiques/frappes.mp3"),
           },
           favori: true,
-          solo: false,
         },
         {
           id: "6",
@@ -155,7 +150,6 @@ class CoursServ {
             path: require("../musiques/grands_battements.mp3"),
           },
           favori: true,
-          solo: false,
         },
         {
           id: "7",
@@ -178,7 +172,6 @@ class CoursServ {
             path: require("../musiques/fondus.mp3"),
           },
           favori: true,
-          solo: false,
         },
       ],
     },
@@ -199,7 +192,6 @@ class CoursServ {
             { id: "3", typePas: "penché de côté", repetitions: 2 },
           ],
           favori: true,
-          solo: false,
 
           musique: {
             id: "1",
@@ -227,7 +219,6 @@ class CoursServ {
             path: require("../musiques/degages.mp3"),
           },
           favori: true,
-          solo: false,
         },
       ],
     },
@@ -249,7 +240,6 @@ class CoursServ {
             { id: "4", typePas: "grand-plié.", repetitions: 2 },
           ],
           favori: true,
-          solo: false,
 
           musique: {
             id: "1",
@@ -285,7 +275,6 @@ class CoursServ {
             path: require("../musiques/fondus.mp3"),
           },
           favori: true,
-          solo: false,
         },
       ],
     },

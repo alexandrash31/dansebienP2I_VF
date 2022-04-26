@@ -17,7 +17,7 @@ interface VoirMesExercicesState {
   exercices: Array<ExerciceS>;
   difficulteFilter: string;
   favoriFilter: boolean;
-  el: boolean;
+  displayExercicesDetails: boolean;
   itemExercice: ExerciceS;
   onDelete: (nomExo: string) => void;
   favori: (nomExo: string) => void;
@@ -28,19 +28,18 @@ export default class VoirMesExercicesScreen extends Component<
   VoirMesExercicesState
 > {
   private el = false;
-
+  //Inititalisation exercice (peut importe lequel)
   state: VoirMesExercicesState = {
     exercices: [],
     difficulteFilter: "",
     favoriFilter: true,
-    el: false,
+    displayExercicesDetails: false,
     itemExercice: {
       id: "2",
       difficulte: "Intermédiaire",
       nomExo: "Exo2",
       typeExo: "relevés",
       tempo: "2-2-48-4",
-      solo: false,
       favori: false,
       pas: [],
     },
@@ -84,31 +83,31 @@ export default class VoirMesExercicesScreen extends Component<
   componentDidMount() {
     this.loadExercices();
   }
-
+  //Permet d'effacer un exercice
   removeExercice = (nomExo: string) => {
     exerciceService.remove(nomExo);
     this.loadExercices();
   };
-
+  //Permet de mettre en favori un exercice
   favoriExercice = (nomExo: string) => {
     exerciceService.favori(nomExo);
     this.loadExercices();
   };
-
+  //Permet d'utiliser le filtre
   onChangeFilter = (filter: string) => {
     this.setState({ difficulteFilter: filter });
   };
-
+  //changer d'affichage pour pouvoir modifier l'exercice
   changer = (itemExercice: ExerciceS) => {
-    this.setState({ el: true });
+    this.setState({ displayExercicesDetails: true });
     this.setState({ itemExercice });
   };
   //bouton de retour
   changerR = () => {
-    this.setState({ el: false });
+    this.setState({ displayExercicesDetails: false });
   };
   render() {
-    if (this.state.el) {
+    if (this.state.displayExercicesDetails) {
       return (
         <View>
           <ExerciceDetailsModifiable exercice={this.state.itemExercice} />

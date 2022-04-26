@@ -38,11 +38,12 @@ export default class ExerciceDetailsModifiable extends Component<
   updatePas = (update: Partial<PasS>) => {
     this.setState({ partialPas: { ...this.state.partialPas, ...update } });
   };
+  //afficher les pas à partir du service
   loadPas = () =>
     pasServices.getAll().then((pas) => {
       this.setState({ pas });
     });
-
+  //permet d'effacer un pas
   removePas = (typePas: string) => {
     this.props.exercice.pas = this.props.exercice.pas?.filter(
       (pas: PasS) => pas.typePas !== typePas
@@ -51,10 +52,11 @@ export default class ExerciceDetailsModifiable extends Component<
     this.loadPas();
   };
 
+  //permet d'afficher les pas modifiables
   modifier = () => {
     this.setState({ modifier: true });
   };
-
+  //enregistrement modifications
   enregistrermodif = () => {
     this.setState({ modifier: false });
   };
