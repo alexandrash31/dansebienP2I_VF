@@ -49,11 +49,20 @@ export const styleTitre = StyleSheet.create({
     color: "white",
     padding: 5,
   },
+
+  pasText2: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: 5,
+  },
   pasText: {
     fontSize: 18,
     color: "white",
     padding: 5,
     alignContent: "space-around",
+    alignSelf: "center",
+
     //justifyContent: "space-evenly",
   },
 });

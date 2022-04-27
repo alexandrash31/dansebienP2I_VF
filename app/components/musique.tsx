@@ -57,7 +57,7 @@ export default function MusiqueComposant(props: MusiqueProps) {
       }
     }
     //Fonction qui permet de mettre en boucle la musique
-    async function LoopeSound() {
+    async function LoopSound() {
       if (sound) {
         if (!isLooping) {
           await sound.setIsLoopingAsync(true);
@@ -66,7 +66,7 @@ export default function MusiqueComposant(props: MusiqueProps) {
         }
       }
     }
-    //Fonction qui permet de récuperer et de modifier le temps de la musique (pour l'utiliser avec la barre pour faire commencer la musique à un moment souhaité)
+    //Fonction qui permet de modifier à quel instant la musique démarre
     async function onChange(e: number) {
       if (sound) {
         try {
@@ -78,7 +78,8 @@ export default function MusiqueComposant(props: MusiqueProps) {
         }
       }
     }
-
+    //Fonction qui permet d'avoir une valeur qui représente la durée en cours d'une musique pour la représenter
+    //avec une barre qui avance
     const getProgress = () => {
       if (sound == null || duration == null || position == null) {
         return 0;
@@ -106,7 +107,7 @@ export default function MusiqueComposant(props: MusiqueProps) {
           <TouchableOpacity onPress={pauseSound}>
             <FontAwesome name="pause" size={20} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={LoopeSound}>
+          <TouchableOpacity onPress={LoopSound}>
             <Entypo
               name="loop"
               size={20}

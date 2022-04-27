@@ -31,6 +31,7 @@ export const styleContainer = StyleSheet.create({
     borderRadius: 20,
     opacity: 0.6,
     backgroundColor: "#4B0082",
+    padding: 5,
   },
 
   description_container: {

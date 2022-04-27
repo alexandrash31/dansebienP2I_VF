@@ -5,6 +5,8 @@ export const styleBoutons = StyleSheet.create({
     backgroundColor: "#4B0082",
     borderRadius: 30,
     marginBottom: 20,
+    width: "70%",
+    alignSelf: "center",
   },
 
   buttonContainer: {

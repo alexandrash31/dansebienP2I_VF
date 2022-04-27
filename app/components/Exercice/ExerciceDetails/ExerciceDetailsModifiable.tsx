@@ -113,7 +113,7 @@ export default class ExerciceDetailsModifiable extends Component<
 
             <TextInput
               style={styleTitre.input}
-              placeholder="repetitions"
+              placeholder="repetitions :tapez un nombre"
               onChangeText={(text) =>
                 this.updatePas({ repetitions: Number(text) })
               }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TextInput, View, Alert, ScrollView } from "react-native";
+import { TextInput, View, Alert, ScrollView, Text } from "react-native";
 import { Button, Title } from "react-native-paper";
 import { styleBoutons } from "../styles/styleBouton";
 import { PasS } from "../services/pas.services";
@@ -99,6 +99,9 @@ export default class CreerUnExerciceScreen extends Component<
               placeholder="Type de l'exercice"
               onChangeText={(text) => this.updateExercice({ typeExo: text })}
             />
+            <Text style={styleTitre.titre2}>
+              Choisissez un niveau de difficulté :
+            </Text>
             <Picker
               itemStyle={styleTitre.input}
               selectedValue={this.state.partialExercice.difficulte}
@@ -144,7 +147,7 @@ export default class CreerUnExerciceScreen extends Component<
 
           <TextInput
             style={styleTitre.input}
-            placeholder="repetitions"
+            placeholder="repetitions : tapez un nombre"
             onChangeText={(text) =>
               this.updatePas({ repetitions: Number(text) })
             }

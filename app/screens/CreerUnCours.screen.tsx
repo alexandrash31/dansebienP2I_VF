@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TextInput, View } from "react-native";
+import { TextInput, View, Text } from "react-native";
 import { Button, Title } from "react-native-paper";
 import { NavigationProps } from "../navigation/App.navigator";
 import { styleBoutons } from "../styles/styleBouton";
@@ -55,7 +55,9 @@ export default class CreerUnCourscreen extends Component<
             placeholder="Nom du cours"
             onChangeText={(text) => this.updateCours({ nomduCours: text })}
           />
-
+          <Text style={styleTitre.titre2}>
+            Choisissez un niveau de difficulté :
+          </Text>
           <Picker
             itemStyle={styleTitre.input}
             selectedValue={this.state.partialCours.difficulte}
